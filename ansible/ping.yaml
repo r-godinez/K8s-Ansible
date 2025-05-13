@@ -1,0 +1,5 @@
+- name: Test connectivity
+  hosts: k8s
+  tasks:
+    - name: Ping the host
+      ping:

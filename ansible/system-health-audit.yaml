@@ -1,0 +1,27 @@
+- name: Collect System Health Info
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Print CPU info
+      ansible.builtin.shell: lscpu
+      register: cpu_info
+
+    - name: Print Memory info
+      ansible.builtin.shell: free -h
+      register: mem_info
+
+    - name: Print Disk usage
+      ansible.builtin.shell: df -h
+      register: disk_info
+
+    - name: Show system health summary
+      ansible.builtin.debug:
+        msg: |
+          CPU INFO:
+          {{ cpu_info.stdout }}
+
+          MEMORY INFO:
+          {{ mem_info.stdout }}
+
+          DISK USAGE:
+          {{ disk_info.stdout  }}

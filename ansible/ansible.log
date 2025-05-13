@@ -1,0 +1,146 @@
+Running Ansible Playbook at Mon May 12 07:26:01 PM PDT 2025
+
+PLAY [Recover Node Exporter Service] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.102]
+ok: [192.168.1.101]
+
+TASK [Check if node_exporter is running] ***************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Log status to /var/log/recovery.log] *************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Restart node_exporter if not running] ************************************
+skipping: [192.168.1.101]
+skipping: [192.168.1.102]
+
+TASK [Log restart action] ******************************************************
+skipping: [192.168.1.101]
+skipping: [192.168.1.102]
+
+PLAY RECAP *********************************************************************
+192.168.1.101              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+192.168.1.102              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+Finished at Mon May 12 07:26:09 PM PDT 2025
+Running Ansible Playbook at Mon May 12 07:27:01 PM PDT 2025
+
+PLAY [Recover Node Exporter Service] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.102]
+ok: [192.168.1.101]
+
+TASK [Check if node_exporter is running] ***************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Log status to /var/log/recovery.log] *************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Restart node_exporter if not running] ************************************
+skipping: [192.168.1.101]
+skipping: [192.168.1.102]
+
+TASK [Log restart action] ******************************************************
+skipping: [192.168.1.101]
+skipping: [192.168.1.102]
+
+PLAY RECAP *********************************************************************
+192.168.1.101              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+192.168.1.102              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+Finished at Mon May 12 07:27:08 PM PDT 2025
+Running Ansible Playbook at Mon May 12 07:28:01 PM PDT 2025
+
+PLAY [Recover Node Exporter Service] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.102]
+ok: [192.168.1.101]
+
+TASK [Check if node_exporter is running] ***************************************
+changed: [192.168.1.102]
+fatal: [192.168.1.101]: FAILED! => {"changed": true, "cmd": "systemctl is-active node_exporter", "delta": "0:00:00.018042", "end": "2025-05-12 19:28:06.258759", "msg": "non-zero return code", "rc": 3, "start": "2025-05-12 19:28:06.240717", "stderr": "", "stderr_lines": [], "stdout": "inactive", "stdout_lines": ["inactive"]}
+...ignoring
+
+TASK [Log status to /var/log/recovery.log] *************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Restart node_exporter if not running] ************************************
+skipping: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Log restart action] ******************************************************
+skipping: [192.168.1.102]
+changed: [192.168.1.101]
+
+PLAY RECAP *********************************************************************
+192.168.1.101              : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+192.168.1.102              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+Finished at Mon May 12 07:28:10 PM PDT 2025
+Running Ansible Playbook at Mon May 12 07:29:01 PM PDT 2025
+
+PLAY [Recover Node Exporter Service] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.102]
+ok: [192.168.1.101]
+
+TASK [Check if node_exporter is running] ***************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Log status to /var/log/recovery.log] *************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Restart node_exporter if not running] ************************************
+skipping: [192.168.1.101]
+skipping: [192.168.1.102]
+
+TASK [Log restart action] ******************************************************
+skipping: [192.168.1.101]
+skipping: [192.168.1.102]
+
+PLAY RECAP *********************************************************************
+192.168.1.101              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+192.168.1.102              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+Finished at Mon May 12 07:29:09 PM PDT 2025
+Running Ansible Playbook at Mon May 12 07:32:01 PM PDT 2025
+
+PLAY [Recover Node Exporter Service] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.102]
+ok: [192.168.1.101]
+
+TASK [Check if node_exporter is running] ***************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Log status to /var/log/recovery.log] *************************************
+changed: [192.168.1.102]
+changed: [192.168.1.101]
+
+TASK [Restart node_exporter if not running] ************************************
+skipping: [192.168.1.101]
+skipping: [192.168.1.102]
+
+TASK [Log restart action] ******************************************************
+skipping: [192.168.1.101]
+skipping: [192.168.1.102]
+
+PLAY RECAP *********************************************************************
+192.168.1.101              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+192.168.1.102              : ok=3    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+Finished at Mon May 12 07:32:08 PM PDT 2025

@@ -1,0 +1,29 @@
+---
+- name: Recover Node Exporter Service
+  hosts: all
+  become: true
+  tasks:
+    - name: Check if node_exporter is running
+      shell: systemctl is-active node_exporter
+      register: exporter_status
+      ignore_errors: true
+
+    - name: Log status to /var/log/recovery.log
+      lineinfile:
+        path: /var/log/recovery.log
+        create: yes
+        line: "Checked node_exporter at {{ ansible_date_time.iso8601 }} - Status: {{ exporter_status.stdout }}"
+
+    - name: Restart node_exporter if not running
+      when: exporter_status.stdout != "active"
+      systemd:
+        name: node_exporter
+        state: restarted
+        enabled: true
+
+    - name: Log restart action
+      when: exporter_status.stdout != "active"
+      lineinfile:
+        path: /var/log/recovery.log
+        create: yes
+        line: "Restarted node_exporter at {{ ansible_date_time.iso8601 }}"

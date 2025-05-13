@@ -1,0 +1,21 @@
+- name: Deploy system health check script and schedule it
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create health check script
+      copy:
+        dest: /usr/local/bin/health_check.sh
+        content: |
+          #!/bin/bash
+          echo "Health Check at $(date)" >> /var/log/health_check.log
+          echo "CPU Load: $(uptime)" >> /var/log/health_check.log
+          echo "Memory Usage $(free -m)" >> /var/log/health_check.log
+          echo "Disk Usage: $(df -h /)" >> /var/log/health_check.log
+          echo "---" >> /var/log/health_check.log
+        mode: '0755'
+
+    - name: Schedule cron job for system health check
+      cron:
+        name: "System Health Check"
+        minute: "*/1"
+        job: "/usr/local/bin/health_check.sh"
